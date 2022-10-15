@@ -1,20 +1,36 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AppContext from "../AppContext";
-import useNotUndefinedContext from '../../utilities/useNotUndefinedContext'
+import useNotUndefinedContext from "../../utilities/useNotUndefinedContext";
+import cn from "classnames";
 
 type Props = {};
 
 const Button = (props: Props) => {
   const context = useNotUndefinedContext(AppContext);
-  const [touched, setTouched] = useState(false);
-  
+  const [down, setDown] = useState(false);
+
   return (
     <button
+      onMouseOver={() => setDown(!down)}
+      onMouseLeave={() => setDown(!down)}
+      onTouchStart={() => setDown(!down)}
+      onTouchEnd={() => setDown(!down)}
       onClick={context.handleGeneratePassword}
-      className="ease-in-out duration-75 text-grey-dark active:text-coral active:border-solid active:bg-grey-dark active:border-4 active:border-coral hover:text-coral hover:border-solid hover:border-4 hover:border-coral hover:bg-grey-dark bg-coral h-button-y text-md"
+      className={cn({
+        "bg-coral": !down,
+        "text-grey-dark": !down,
+        "ease-in-out": true,
+        "duration-75": true,
+        "h-button-y": true,
+        "text-md": true,
+        "text-coral": down,
+        "bg-grey-dark": down,
+        "border-coral": down,
+        "border-4": down,
+        "border-solid": down,
+      })}
     >
-      <p>Generate Password</p>
-      {/* Add an arrow svg here */}
+      Generate Password
     </button>
   );
 };
