@@ -11,9 +11,7 @@ const StrengthBarsContainer = (props: Props) => {
 
   return (
     <dl
-      className={`w-full grid grid-cols-2 max-w-48 items-center ${
-        context.strength === "none" ? "grid-cols-1 justify-items-end" : ""
-      } `}
+      className={`grow shrink-0 flex justify-end items-center mr-5`}
     >
       <StrengthBarsTitle />
       <StrengthBars />

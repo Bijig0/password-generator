@@ -9,7 +9,7 @@ const StrengthBarsTitle = (props: Props) => {
   const context = useNotUndefinedContext(AppContext)
     return (
       <dt>
-        <em className="text-grey-light text-md uppercase not-italic">
+        <em className="text-grey-light text-md uppercase not-italic mr-6">
           {context.strength}
         </em>
       </dt>
