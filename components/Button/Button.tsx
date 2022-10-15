@@ -12,13 +12,13 @@ const Button = (props: Props) => {
   function handleMouseOver(e: React.MouseEvent) {
     if (isMobile()) return false
     console.log("Mouse over");
-    setDown(!down);
+    setDown(true);
   }
   function handleMouseLeave(e: React.MouseEvent) {
     // mouse over and mouse leave implictly fires during an onClick on touch devices
     if (isMobile()) return false
     console.log('Mouse leave')
-    setDown(!down)
+    setDown(false)
 
   }
 
@@ -26,8 +26,9 @@ const Button = (props: Props) => {
     <button
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
-      onTouchStart={(e) => setDown(!down)}
-      onTouchEnd={() => setDown(!down)}
+      onMouseUp={handleMouseLeave}
+      onTouchStart={(e) => setDown(true)}
+      onTouchEnd={() => setDown(false)}
       onClick={context.handleGeneratePassword}
       className={cn({
         "bg-coral": !down,
