@@ -12,9 +12,8 @@
   textarea:disabled,
   input:disabled::placeholder,
   textarea:disabled::placeholder {
-    -webkit-text-fill-color: #880000; 
+    -webkit-text-fill-color: @apply text-grey-light; 
     opacity: 1; 
-    background: white;
   }
 }
 
