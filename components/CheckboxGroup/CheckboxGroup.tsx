@@ -11,7 +11,7 @@ const CheckboxGroup = (props: Props) => {
   const context = useNotUndefinedContext(AppContext)
   return (
     <form>
-      <ul className="flex flex-col gap-y-4 my-6">
+      <ul className="flex flex-col gap-y-8 my-6">
         {context.passwordOptions.map((passwordOption) => (
           <CheckboxField
             key={passwordOption.id}
