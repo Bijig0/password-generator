@@ -12,9 +12,9 @@
   textarea:disabled,
   input:disabled::placeholder,
   textarea:disabled::placeholder {
-    -webkit-text-fill-color: @apply text-grey-light; 
-    color: @apply text-grey-light !important;
-    opacity: 1; 
+    -webkit-text-fill-color: "#E6E5EA";
+    color: "#E6E5EA" !important;
+    opacity: 1;
   }
 }
 
