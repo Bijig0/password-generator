@@ -39,6 +39,7 @@ const Checkbox = (props: Props) => {
         id={props.id}
         onClick={handleClick}
         className={cn({
+          "rounded-none": true,
           "appearance-none": true,
           relative: true,
           "aspect-square": true,
