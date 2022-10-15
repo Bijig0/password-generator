@@ -10,7 +10,6 @@ type Props = {};
 const PasswordField = (props: Props) => {
   const context = useNotUndefinedContext(AppContext);
   const [src, setSrc] = useState("/CopyIconDark.svg");
-  const [copied, setCopied] = useState(false);
   const handleHover = () => {
     setSrc("/CopyIconLight.svg");
   };
@@ -19,7 +18,7 @@ const PasswordField = (props: Props) => {
   };
   const handleClick = () => {
     navigator.clipboard.writeText(context.password);
-    setCopied(true);
+    context.setCopied(true);
     setSrc("/CopyIconDark.svg");
   };
   return (
@@ -29,16 +28,15 @@ const PasswordField = (props: Props) => {
           disabled
           placeholder="Password"
           type="text"
-          className="text-fill-grey-light outline-none w-full h-full block text-grey-light bg-grey-dark text-md placeholder:text-grey-normal placeholder:text-md"
+          className="outline-none w-full h-full block bg-grey-dark text-grey-light text-md placeholder:text-grey-normal placeholder:text-md"
           value={context.password}
-          id='password-input-field'
         />
         <dl className="hover:cursor-pointer flex w-28 justify-between items-center">
           <dt
             className={cn({
               "text-coral": true,
               uppercase: true,
-              "opacity-0": !copied,
+              "opacity-0": !context.copied,
             })}
           >
             Copied

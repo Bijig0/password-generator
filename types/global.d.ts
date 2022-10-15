@@ -20,5 +20,7 @@ declare global {
     handleGeneratePassword: (e: React.MouseEvent) => void;
     password: string;
     strength: Strength;
+    copied: boolean;
+    setCopied: React.Dispatch<React.SetStateAction<boolean>>;
   };
 }

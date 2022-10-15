@@ -23,7 +23,7 @@ export const AppProvider = (props: Props) => {
     includeNumbers,
     includeSymbols,
   ]);
-
+  const [copied, setCopied] = useState(false);
   const [password, setPassword] = useState<string>("");
   const strength: Strength = calculateStrength(numberOfChecked, passwordLength);
 
@@ -31,6 +31,7 @@ export const AppProvider = (props: Props) => {
   // Instead of the entire app
   const handleGeneratePassword = () => {
     const generatedPassword = generatePassword(passwordOptions, passwordLength);
+    setCopied(false)
     setPassword(generatedPassword);
   };
   return (
@@ -45,6 +46,8 @@ export const AppProvider = (props: Props) => {
         handleGeneratePassword,
         password,
         strength,
+        copied,
+        setCopied,
       }}
     >
       {props.children}

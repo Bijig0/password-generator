@@ -6,7 +6,7 @@ const generatePassword = (options: Option[], length: number): string => {
     ?.map((option) => option.characters)
     .join("");
   if (validCharacters.length === 0) {
-    return "No options selected :(";
+    return "No option chosen";
   }
   let password = "";
   for (let i = 0; i < length; i++) {

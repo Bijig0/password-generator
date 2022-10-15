@@ -9,9 +9,18 @@ const Button = (props: Props) => {
   const context = useNotUndefinedContext(AppContext);
   const [down, setDown] = useState(false);
 
+  function handleMouseOver(e: React.MouseEvent) {
+    // mouseOver implicitly gets fired on click for a touch device
+    if (e.relatedTarget === null) {
+      return;
+    }
+    console.log("Mouse over");
+    setDown(!down);
+  }
+
   return (
     <button
-      onMouseOver={() => setDown(!down)}
+      onMouseOver={handleMouseOver}
       onMouseLeave={() => setDown(!down)}
       onTouchStart={() => setDown(!down)}
       onTouchEnd={() => setDown(!down)}
