@@ -57,6 +57,7 @@ const Checkbox = (props: Props) => {
           "border-0": checked,
           "before:absolute": checked,
           "before:w-tick": checked,
+          "before:h-tick": checked,
           "before:bg-tick": checked,
           "before:aspect-square": checked,
           "before:absolute-center": checked,

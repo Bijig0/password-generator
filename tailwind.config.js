@@ -36,8 +36,9 @@ module.exports = {
         md: "540px",
       },
       height: {
+        tick: "calc(theme(width.checkbox) - 3px)",
         "button-y": "65px",
-        "checkbox": "20px",
+        checkbox: "20px",
         sm: "72px",
         "sm-lg": "80px",
         md: "143px",
