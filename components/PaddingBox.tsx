@@ -7,7 +7,7 @@ type Props = {
 
 const PaddingBox = (props: Props) => {
   
-  const baseClasses = "py-box-y px-[10px] sm:px-box-x";
+  const baseClasses = "py-box-y px-[16px] sm:px-box-x";
 
   return (
     <div className={`${baseClasses} ${props.className}`}>{props.children}</div>

@@ -11,7 +11,7 @@ const StrengthBarsContainer = (props: Props) => {
 
   return (
     <dl
-      className={`grow shrink-0 flex justify-end items-center mr-5`}
+      className={`grow shrink-0 flex justify-end items-center`}
     >
       <StrengthBarsTitle />
       <StrengthBars />
