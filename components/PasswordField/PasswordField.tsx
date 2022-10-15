@@ -31,9 +31,10 @@ const PasswordField = (props: Props) => {
           type="text"
           className="outline-none w-full h-full block bg-grey-dark text-grey-light text-md placeholder:text-grey-normal placeholder:text-md"
           value={context.password}
+          id='password-input-field'
         />
-        <div className="hover:cursor-pointer flex w-28 justify-between items-center">
-          <p
+        <dl className="hover:cursor-pointer flex w-28 justify-between items-center">
+          <dt
             className={cn({
               "text-coral": true,
               uppercase: true,
@@ -41,17 +42,19 @@ const PasswordField = (props: Props) => {
             })}
           >
             Copied
-          </p>
-          <Image
-            onClick={handleClick}
-            className="cursor-pointer"
-            onMouseOver={handleHover}
-            onMouseOut={handleUnhover}
-            src={src}
-            width={20}
-            height={20}
-          />
-        </div>
+          </dt>
+          <dd>
+            <Image
+              onClick={handleClick}
+              className="cursor-pointer"
+              onMouseOver={handleHover}
+              onMouseOut={handleUnhover}
+              src={src}
+              width={20}
+              height={20}
+            />
+          </dd>
+        </dl>
       </PaddingBox>
     </div>
   );
