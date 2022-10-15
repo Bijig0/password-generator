@@ -12,8 +12,9 @@
   textarea:disabled,
   input:disabled::placeholder,
   textarea:disabled::placeholder {
-    -webkit-text-fill-color: currentcolor; /* 1. sets text fill to current `color` for safari */
-    opacity: 1; /* 2. correct opacity on iOS */
+    -webkit-text-fill-color: #880000; 
+    opacity: 1; 
+    background: white;
   }
 }
 
