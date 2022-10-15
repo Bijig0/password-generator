@@ -3,11 +3,11 @@ const calculateStrength = (
   length: number
 ): Strength => {
   if (numberOfChecked === 0) {
-    return "non-existent";
+    return "none";
   }
   switch (length) {
     case 0:
-      return "non-existent";
+      return "none";
     case 1:
     case 2:
     case 3:

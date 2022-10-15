@@ -29,7 +29,7 @@ const PasswordField = (props: Props) => {
           disabled
           placeholder="Password"
           type="text"
-          className="outline-none w-full h-full block bg-grey-dark text-grey-light text-md hover:placeholder:text-white placeholder:text-grey-normal placeholder:text-md"
+          className="outline-none w-full h-full block bg-grey-dark text-grey-light text-md placeholder:text-grey-normal placeholder:text-md"
           value={context.password}
         />
         <div className="hover:cursor-pointer flex w-28 justify-between items-center">

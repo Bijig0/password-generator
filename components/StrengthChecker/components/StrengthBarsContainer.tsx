@@ -11,8 +11,8 @@ const StrengthBarsContainer = (props: Props) => {
 
   return (
     <dl
-      className={`flex w-48 items-center ${
-        context.strength === "non-existent" ? "justify-end" : "justify-between"
+      className={`w-full grid grid-cols-2 max-w-48 items-center ${
+        context.strength === "none" ? "grid-cols-1 justify-items-end" : ""
       } `}
     >
       <StrengthBarsTitle />

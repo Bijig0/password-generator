@@ -8,7 +8,7 @@ const StrengthBars = (props: Props) => {
   const numberOfBars = 4;
   const arrayofNumberOfBars = range(1, numberOfBars);
   return (
-    <dd className="flex gap-x-1 justify-between">
+    <dd className="flex gap-x-1 justify-center">
       {arrayofNumberOfBars.map((num) => {
         return <StrengthBar key={num} position={num} />;
       })}

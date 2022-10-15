@@ -14,10 +14,10 @@ module.exports = {
       },
       black: "#18171F",
       coral: "#A4FFAF",
-      'too-weak': "#F64A4A",
+      "too-weak": "#F64A4A",
       weak: "#FB7C58",
       moderate: "#F8CD65",
-      strong: 'theme(colors.coral)'
+      strong: "theme(colors.coral)",
     },
     fontSize: {
       0: "0px",
@@ -30,8 +30,8 @@ module.exports = {
     },
     extend: {
       width: {
-        "checkbox": "20px",
-        "tick": "calc(theme(width.checkbox) - 3px)",
+        checkbox: "20px",
+        tick: "calc(theme(width.checkbox) - 3px)",
         "button-x": "476px",
         md: "540px",
       },
@@ -51,6 +51,9 @@ module.exports = {
       },
       backgroundImage: {
         tick: "url(/Tick.svg)",
+      },
+      maxWidth: {
+        48: "192px",
       },
     },
   },
