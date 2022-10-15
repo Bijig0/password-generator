@@ -39,11 +39,15 @@ const Checkbox = (props: Props) => {
         id={props.id}
         onClick={handleClick}
         className={cn({
+          // rounded-none removes default IOS rounded corners
           "rounded-none": true,
+          // appearance-none to remove input styles
           "appearance-none": true,
           relative: true,
+          // all these three properties to make IOS make checkbox square
           "aspect-square": true,
           "w-checkbox": true,
+          "h-checkbox": true,
           "mr-5": true,
           "bg-grey-dark": !checked,
           "border-2": !checked,

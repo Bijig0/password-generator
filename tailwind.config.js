@@ -37,7 +37,7 @@ module.exports = {
       },
       height: {
         "button-y": "65px",
-
+        "checkbox": "20px",
         sm: "72px",
         "sm-lg": "80px",
         md: "143px",
