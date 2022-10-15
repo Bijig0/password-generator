@@ -1,4 +1,4 @@
-class OptionClass {
+class Option {
   public id: number;
   public text: OptionText;
   public checked: boolean;
@@ -17,32 +17,32 @@ class OptionClass {
   }
 }
 
-export const includeUppercase = new OptionClass(
+export const includeUppercase = new Option(
   1,
   "Include Uppercase Letters",
   false,
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 );
 
-export const includeLowercase = new OptionClass(
+export const includeLowercase = new Option(
   2,
   "Include Lowercase Letters",
   false,
   "abcdefghijklmnopqrstuvwxyz"
 );
 
-export const includeNumbers = new OptionClass(
+export const includeNumbers = new Option(
   3,
   "Include Numbers",
   false,
   "123456789"
 );
 
-export const includeSymbols = new OptionClass(
+export const includeSymbols = new Option(
   4,
   "Include Symbols",
   false,
   '!@#$%^&*()-+|=-":>?<,./'
 );
 
-export default OptionClass;
+export default Option;

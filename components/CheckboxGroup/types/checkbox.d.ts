@@ -1,4 +1,4 @@
-import OptionClass from "../../../utilities/Option";
+import Option from "../../../utilities/Option";
 
 export {};
 
@@ -9,12 +9,5 @@ declare global {
     | "Include Numbers"
     | "Include Symbols";
 
-  type Option = {
-    text: OptionText;
-    passwordOption: keyof PasswordOptions;
-  };
-
-  type TsetPasswordOptions = React.Dispatch<
-    React.SetStateAction<OptionClass[]>
-  >;
+  type TsetPasswordOptions = React.Dispatch<React.SetStateAction<Option[]>>;
 }

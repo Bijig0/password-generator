@@ -1,5 +1,5 @@
 import { createContext, useState, useMemo } from "react";
-import OptionClass, {
+import Option, {
   includeUppercase,
   includeLowercase,
   includeNumbers,
@@ -17,7 +17,7 @@ type Props = {
 export const AppProvider = (props: Props) => {
   const [numberOfChecked, setNumberOfChecked] = useState<number>(0);
   const [passwordLength, setPasswordLength] = useState(10);
-  const [passwordOptions, setPasswordOptions] = useState<OptionClass[]>([
+  const [passwordOptions, setPasswordOptions] = useState<Option[]>([
     includeUppercase,
     includeLowercase,
     includeNumbers,
@@ -25,7 +25,7 @@ export const AppProvider = (props: Props) => {
   ]);
 
   const [password, setPassword] = useState<string>("");
-  const strength: Strength = calculateStrength(numberOfChecked, passwordLength)
+  const strength: Strength = calculateStrength(numberOfChecked, passwordLength);
 
   // Make it so only the password field gets re-rendered every when this event is clicked
   // Instead of the entire app

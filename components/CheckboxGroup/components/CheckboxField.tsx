@@ -1,10 +1,10 @@
 import React from "react";
-import OptionClass from "../../../utilities/Option";
+import Option from "../../../utilities/Option";
 import Checkbox from "./Checkbox";
 import CheckboxText from "./CheckboxText";
 
 type Props = {
-  passwordOption: OptionClass;
+  passwordOption: Option;
   id: string;
 };
 

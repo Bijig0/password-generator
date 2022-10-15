@@ -1,17 +1,17 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
-import OptionClass from "../../../utilities/Option";
+import Option from "../../../utilities/Option";
 import AppContext from "../../AppContext";
-import useNotUndefinedContext from '../../../utilities/useNotUndefinedContext'
+import useNotUndefinedContext from "../../../utilities/useNotUndefinedContext";
 
 type Props = {
-  passwordOption: OptionClass;
-  id: string
+  passwordOption: Option;
+  id: string;
 };
 
 const Checkbox = (props: Props) => {
   const [checked, setChecked] = useState(false);
-  const context = useNotUndefinedContext(AppContext)
+  const context = useNotUndefinedContext(AppContext);
 
   const handleClick = () => {
     setChecked((prevChecked) => !prevChecked);
@@ -23,7 +23,7 @@ const Checkbox = (props: Props) => {
     context.setPasswordOptions((passwordOptions) => {
       const passwordOptionsCopy = passwordOptions.map((passwordOption) => {
         if (passwordOption.text === props.passwordOption.text) {
-          // Make this create new OptionClass object instead
+          // Make this create new Option object instead
           return { ...passwordOption, checked: !passwordOption.checked };
         }
         return passwordOption;
@@ -35,11 +35,11 @@ const Checkbox = (props: Props) => {
   return (
     <>
       <input
-        type='checkbox'
+        type="checkbox"
         id={props.id}
         onClick={handleClick}
         className={cn({
-          'appearance-none': true,
+          "appearance-none": true,
           relative: true,
           "aspect-square": true,
           "w-checkbox": true,
