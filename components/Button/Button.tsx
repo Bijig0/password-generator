@@ -28,7 +28,7 @@ const Button = (props: Props) => {
       onMouseLeave={handleMouseLeave}
       onTouchStart={(e) => setDown(!down)}
       onTouchEnd={() => setDown(!down)}
-      // onClick={context.handleGeneratePassword}
+      onClick={context.handleGeneratePassword}
       className={cn({
         "bg-coral": !down,
         "text-grey-dark": !down,
