@@ -2,29 +2,33 @@ import React, { useState } from "react";
 import AppContext from "../AppContext";
 import useNotUndefinedContext from "../../utilities/useNotUndefinedContext";
 import cn from "classnames";
+import isMobile from '../../utilities/isMobile'
 
 type Props = {};
 
 const Button = (props: Props) => {
   const context = useNotUndefinedContext(AppContext);
   const [down, setDown] = useState(false);
-
   function handleMouseOver(e: React.MouseEvent) {
-    // mouseOver implicitly gets fired on click for a touch device
-    if (e.relatedTarget === null) {
-      return;
-    }
+    if (isMobile()) return false
     console.log("Mouse over");
     setDown(!down);
+  }
+  function handleMouseLeave(e: React.MouseEvent) {
+    // mouse over and mouse leave implictly fires during an onClick on touch devices
+    if (isMobile()) return false
+    console.log('Mouse leave')
+    setDown(!down)
+
   }
 
   return (
     <button
       onMouseOver={handleMouseOver}
-      onMouseLeave={() => setDown(!down)}
-      onTouchStart={() => setDown(!down)}
+      onMouseLeave={handleMouseLeave}
+      onTouchStart={(e) => setDown(!down)}
       onTouchEnd={() => setDown(!down)}
-      onClick={context.handleGeneratePassword}
+      // onClick={context.handleGeneratePassword}
       className={cn({
         "bg-coral": !down,
         "text-grey-dark": !down,
