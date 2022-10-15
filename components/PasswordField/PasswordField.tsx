@@ -29,7 +29,7 @@ const PasswordField = (props: Props) => {
           disabled
           placeholder="Password"
           type="text"
-          className="outline-none w-full h-full block bg-grey-dark text-grey-light text-md placeholder:text-grey-normal placeholder:text-md"
+          className="text-fill-grey-light outline-none w-full h-full block text-grey-light bg-grey-dark text-md placeholder:text-grey-normal placeholder:text-md"
           value={context.password}
           id='password-input-field'
         />

@@ -23,6 +23,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .text-fill-grey-light {
+    -webkit-text-fill-color: @apply text-grey-light;
+  }
 }
 
 html,
