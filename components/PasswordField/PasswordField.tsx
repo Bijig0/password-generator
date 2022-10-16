@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import PaddingBox from "../PaddingBox";
-import Image from "next/image";
 import cn from "classnames";
 import AppContext from "../AppContext";
 import useNotUndefinedContext from "../../utilities/useNotUndefinedContext";
 
 type Props = {};
 
+type ColorState = "primary" | "secondary";
+
 const PasswordField = (props: Props) => {
   const context = useNotUndefinedContext(AppContext);
-  const [src, setSrc] = useState("/CopyIconDark.svg");
+  const [copyColor, setCopyColor] = useState<ColorState>("primary");
   const handleHover = () => {
-    setSrc("/CopyIconLight.svg");
+    setCopyColor("secondary");
   };
   const handleUnhover = () => {
-    setSrc("/CopyIconDark.svg");
+    setCopyColor("primary");
   };
   const handleClick = () => {
     navigator.clipboard.writeText(context.password);
     context.setCopied(true);
-    setSrc("/CopyIconDark.svg");
+    setCopyColor("primary");
   };
   return (
     <div className="mb-4 max-w-md h-sm-lg bg-grey-dark">
@@ -37,19 +38,27 @@ const PasswordField = (props: Props) => {
               "text-coral": true,
               uppercase: true,
               "opacity-0": !context.copied,
+              'relative': true,
+              'right-[-5px]': true
             })}
           >
             Copied
           </dt>
           <dd>
-            <Image
+            <img
               onClick={handleClick}
-              className="cursor-pointer"
+              className={cn({
+                "cursor-pointer": true,
+                "w-[50px]": true,
+                "h-[25px]": true,
+                relative: true,
+                "object-[25px]": copyColor === "primary",
+                "object-[-25px]": copyColor === "secondary",
+                "left-[26px]": copyColor === "secondary",
+              })}
               onMouseOver={handleHover}
               onMouseOut={handleUnhover}
-              src={src}
-              width={20}
-              height={20}
+              src={"/CopyIcon.svg"}
             />
           </dd>
         </dl>

@@ -16,6 +16,14 @@
     color: "#E6E5EA" !important;
     opacity: 1;
   }
+  img {
+    max-width: initial;
+    max-height: initial;
+    width: initial;
+    height: initial;
+    min-width: initial;
+    min-height: initial;
+  }
 }
 
 @layer utilities {
