@@ -8,8 +8,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial=scale=1.0" />
         <link rel="preload" as="image" href="./Tick.svg" />
-        <link rel="preload" as="image" href="./CopyIconDark.svg" />
-        <link rel="preload" as="image" href="./CopyIconLight.svg" />
+        <link rel="preload" href="./CopyIconDark.svg" />
+        <link rel="preload" href="./CopyIconLight.svg" />
       </Head>
       <Component {...pageProps} />
     </>
