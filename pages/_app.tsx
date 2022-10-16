@@ -7,6 +7,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial=scale=1.0" />
+        <link rel="prefetch" as="image" href="./Tick.svg" />
+        <link rel="prefetch" as="image" href="./CopyIconDark.svg" />
+        <link rel="prefetch" as="image" href="./CopyIconLight.svg" />
       </Head>
       <Component {...pageProps} />
     </>
